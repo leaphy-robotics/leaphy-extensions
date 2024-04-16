@@ -1,5 +1,5 @@
-# leaphy-extensions-extra
-Leaphy Extra extension library
+# leaphy-extensions
+Leaphy extension library, it contains all the C++ needded for every robot to work with every officially supported Leaphy hardware
 
 ## Publishing a new version to Arduino Library Manager
 
