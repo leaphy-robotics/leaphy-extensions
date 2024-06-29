@@ -6,8 +6,6 @@
 #define LEAPHYORIGINAL1_H_
 
 #include <Arduino.h>
-#include <avr/interrupt.h>
-#include <avr/io.h>
 #include "wiring_private.h"
 #ifndef F_CPU
 #define  F_CPU 16000000UL
