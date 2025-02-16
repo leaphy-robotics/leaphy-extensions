@@ -2,6 +2,7 @@
 // suitable for Fundumoto Shield
 // Copyright Science4Kids 2017
 // version 1.0.0    1 February 2017
+#ifdef AVR
 #ifndef LEAPHYORIGINAL1_H_
 #define LEAPHYORIGINAL1_H_
 
@@ -53,3 +54,4 @@ void moveMotors(int fpDirection, int fpSpeed);
 void setLed(int fpRed, int fpGreen, int fpBlue);
 
 #endif
+#endif // #ifdef AVR
