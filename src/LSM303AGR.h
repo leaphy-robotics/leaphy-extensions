@@ -1,4 +1,4 @@
-#ifdev AVR
+#ifdef AVR
 
 #ifndef LSM303AGR_H
 #define LSM303AGR_H
@@ -27,4 +27,4 @@ class CompassSensor {
 
 #endif
 
-#endif //#ifdev AVR
+#endif //#ifdef AVR
