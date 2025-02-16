@@ -1,11 +1,7 @@
 #ifndef _Red_MP3_H__
 #define _Red_MP3_H__
 
-#ifdef AVR
 #include <SoftwareSerial.h>
-#else
-#include <EspSoftwareSerial.h>
-#endif
 #include <Arduino.h>
 
 /************Command byte**************************/
