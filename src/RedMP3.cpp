@@ -36,7 +36,7 @@ MP3::MP3(uint8_t rxd, uint8_t txd):myMP3(txd, rxd)
 #else
 MP3::MP3(uint8_t rxd, uint8_t txd)
 {
-  myMP3.begin(9600, SWSERIAL_8N1, txd, rxd);//baud rate is 9600bps
+  myMP3.begin(9600, SWSERIAL_8N1, txd, rxd, false);//baud rate is 9600bps
 }
 #endif
 
