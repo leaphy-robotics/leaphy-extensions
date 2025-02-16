@@ -25,6 +25,7 @@ jobs:
           |
           # Install arduino AVR
           arduino-cli core install arduino:avr
+          arduino-cli core install arduino:esp32
           # Install dependencies
           libs=$(cat library.properties | grep depends | sed 's/depends=//g')
           IFS=',' read -ra lib <<< "$libs"
