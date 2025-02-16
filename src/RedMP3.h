@@ -1,7 +1,11 @@
 #ifndef _Red_MP3_H__
 #define _Red_MP3_H__
 
+#ifdef AVR
 #include <SoftwareSerial.h>
+#else
+#include <EspSoftwareSerial.h>
+#endif
 #include <Arduino.h>
 
 /************Command byte**************************/
@@ -74,7 +78,11 @@ public:
 	void playCombine(int16_t folderAndIndex[], int8_t number);
 	
 private:
+	#ifdef AVR
 	SoftwareSerial myMP3;
+	#else
+	EspSoftwareSerial::UART myMP3;
+	#endif
 	void sendCommand(int8_t command, int16_t dat = 0);
 	void mp3Basic(int8_t command);
 	void mp3_5bytes(int8_t command, uint8_t dat);
