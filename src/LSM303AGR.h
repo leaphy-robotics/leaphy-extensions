@@ -1,3 +1,5 @@
+#ifdev AVR
+
 #ifndef LSM303AGR_H
 #define LSM303AGR_H
 #include <Wire.h>
@@ -24,3 +26,5 @@ class CompassSensor {
 };
 
 #endif
+
+#endif //#ifdev AVR
