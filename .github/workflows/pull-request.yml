@@ -37,3 +37,4 @@ jobs:
           |
           # Perform test compile
           arduino-cli compile tests --fqbn arduino:avr:uno --log --library . --clean
+          arduino-cli compile tests --fqbn arduino:esp32:nano_nora --log --library . --clean
