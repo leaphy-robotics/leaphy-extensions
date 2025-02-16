@@ -1,3 +1,4 @@
+#ifdev AVR
 #include "LSM303AGR.h"
 
 #define _ADDRESS_MAG 0x1E   //!< Default address
@@ -46,3 +47,5 @@ void CompassSensor::reset() {
 void CompassSensor::update() {
   CompassSensor::mag.getEvent(data);
 }
+
+#endif //#ifdev AVR
