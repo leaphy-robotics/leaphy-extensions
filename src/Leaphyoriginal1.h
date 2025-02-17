@@ -10,9 +10,6 @@
 #ifndef F_CPU
 #define  F_CPU 16000000UL
 #endif
-#ifdef AVR
-#include <util/delay.h>
-#endif // #ifdef AVR
 #include <stdint.h>
 #include <stdlib.h>
 
