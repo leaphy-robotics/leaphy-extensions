@@ -49,12 +49,10 @@ int getLineFollower(int fpSide)
     return digitalRead(pinLINE);
 }
 
-#ifdef AVR
 void setTone(int fpTone, int fpBeat)
 {
     tone(TONE_PIN, fpTone, fpBeat);
 }
-#endif // #ifdef AVR
 
 void setMotor(int fpMotor, int fpSpeed)
 {
