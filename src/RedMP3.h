@@ -74,7 +74,11 @@ public:
 	void playCombine(int16_t folderAndIndex[], int8_t number);
 	
 private:
+	#ifdef AVR
 	SoftwareSerial myMP3;
+	#else
+	EspSoftwareSerial::UART myMP3;
+	#endif
 	void sendCommand(int8_t command, int16_t dat = 0);
 	void mp3Basic(int8_t command);
 	void mp3_5bytes(int8_t command, uint8_t dat);

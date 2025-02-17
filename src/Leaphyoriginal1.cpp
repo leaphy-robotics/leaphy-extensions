@@ -2,7 +2,6 @@
 // suitable for Fundumoto Shield
 // Copyright Science4Kids& Stichting Leaphy 2018
 // version 1.0.0    25 JULI 2018
-
 #include "Leaphyoriginal1.h"
 
 
@@ -100,3 +99,4 @@ void setLed(int fpRed, int fpGreen, int fpBlue)
     analogWrite(LED1_GREEN, fpGreen);
     analogWrite(LED1_BLUE, fpBlue);
 }
+

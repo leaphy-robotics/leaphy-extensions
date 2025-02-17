@@ -24,10 +24,18 @@
 #include <SoftwareSerial.h>
 #include "RedMP3.h"
 
+#ifdef AVR
 MP3::MP3(uint8_t rxd, uint8_t txd):myMP3(txd, rxd)
 {
   myMP3.begin(9600);//baud rate is 9600bps
 }
+#else
+MP3::MP3(uint8_t rxd, uint8_t txd)
+{
+  myMP3.begin(9600, SWSERIAL_8N1, txd, rxd, false);//baud rate is 9600bps
+}
+#endif
+
 void MP3::begin()
 {
   sendCommand(CMD_SEL_DEV, DEV_TF);//select the TF card  
