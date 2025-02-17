@@ -2,8 +2,6 @@
 // suitable for Fundumoto Shield
 // Copyright Science4Kids& Stichting Leaphy 2018
 // version 1.0.0    25 JULI 2018
-#ifdef AVR
-
 #include "Leaphyoriginal1.h"
 
 
@@ -51,10 +49,12 @@ int getLineFollower(int fpSide)
     return digitalRead(pinLINE);
 }
 
+#ifdef AVR
 void setTone(int fpTone, int fpBeat)
 {
     tone(TONE_PIN, fpTone, fpBeat);
 }
+#endif // #ifdef AVR
 
 void setMotor(int fpMotor, int fpSpeed)
 {
@@ -102,4 +102,3 @@ void setLed(int fpRed, int fpGreen, int fpBlue)
     analogWrite(LED1_BLUE, fpBlue);
 }
 
-#endif // #ifdef AVR
