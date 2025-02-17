@@ -26,6 +26,7 @@ jobs:
           # Install arduino AVR
           arduino-cli core install arduino:avr
           arduino-cli core install arduino:esp32
+          arduino-cli core install arduino:esp8266
           # Install dependencies
           libs=$(cat library.properties | grep depends | sed 's/depends=//g')
           IFS=',' read -ra lib <<< "$libs"
@@ -39,3 +40,4 @@ jobs:
           # Perform test compile
           arduino-cli compile tests --fqbn arduino:avr:uno --log --library . --clean
           arduino-cli compile tests --fqbn arduino:esp32:nano_nora --log --library . --clean
+          arduino-cli compile tests --fqbn arduino:esp8266:nodemcuv2 --log --library . --clean
