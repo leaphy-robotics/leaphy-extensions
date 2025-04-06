@@ -38,7 +38,7 @@ BLEStringCharacteristic LeaphyBLE::addStringCharacteristic(const char *name, con
     BLEUuid uuid(name); // Turn name into UUID
     BLEStringCharacteristic* characteristic = new BLEStringCharacteristic(uuid.str(), BLERead | BLEWrite, 20);
     characteristic->writeValue(initialValue);
-    leaphyService.addCharacteristic(*characteristic); // Hook into service
+    leaphyService.addCharacteristic(*characteristic); // Add to main service
 
     characteristicNames[characteristicCount] = name;
     characteristics[characteristicCount] = characteristic;
@@ -56,4 +56,24 @@ BLECharacteristic* LeaphyBLE::getCharacteristicByName(const char *name)
     }
 
     return nullptr; // characteristic not found
+}
+
+void LeaphyBLE::scanForLeaphyDevices()
+{
+    // Start filtered scan for BLE with Leaphy UUID
+    BLE.scanForUuid(LEAPHY_BLE_SERVICE_UUID);
+}
+
+void LeaphyBLE::stopScanning()
+{
+    BLE.stopScan();
+}
+
+// Check if the device has the Leaphy service UUID
+bool LeaphyBLE::isALeaphy(BLEDevice device)
+{
+    if (device.hasService(LEAPHY_BLE_SERVICE_UUID)) {
+        return true;
+    }
+    return false;
 }
