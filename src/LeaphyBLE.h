@@ -10,6 +10,9 @@ public:
   BLEBoolCharacteristic addBinaryCharacteristic(const char *name, bool initialValue);
   BLEStringCharacteristic addStringCharacteristic(const char *name, const char *initialValue);
   BLECharacteristic* getCharacteristicByName(const char *name);
+  bool isALeaphy(BLEDevice device);
+  void scanForLeaphyDevices();
+  void stopScanning();
 
 private:
   String characteristicNames[10];
