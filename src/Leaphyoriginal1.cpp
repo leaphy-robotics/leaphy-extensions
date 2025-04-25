@@ -15,13 +15,20 @@ void setMotorPins(int m1_pwm, int m1_dir, int m2_pwm, int m2_dir)
 }
 
 
-void setUSPins(int echo, int trig) 
+/* DEPRECATED:
+ * no longer used in webbased easybloqs
+ * keeping for compat with old desktop versions
+ */
+void setUSPins(int echo, int trig)
 {
     us_pins.echo = echo;
     us_pins.trig = trig;
 }
 
-
+/* DEPRECATED:
+ * no longer used in webbased easybloqs
+ * keeping for compat with old desktop versions
+ */
 float getDistance()
 {
     float duration, distance;

@@ -37,6 +37,10 @@ struct {
     int m2_dir = 13;
 } motor_pins;
 
+/* DEPRECATED:
+ * no longer used in webbased easybloqs
+ * keeping for compat with old desktop versions
+ */
 struct {
     int echo = 8;
     int trig = 7;
