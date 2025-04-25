@@ -22,6 +22,7 @@ double getColor(int colorCode, bool isRaw) {
     case 2:
       return (isRaw) ? RawColor_Blue : Color_Blue;
   }
+  return 0.0;
 }
 
 OLEDDISPLAY display;
