@@ -1,6 +1,8 @@
 #include "OLED_Display.h"
 #include "ledstrip.h"
 #include "RedMP3.h"
+#include <TM1637Display.h>
+
 
 LEDSTRIP ledstrip(1, 60);
 
@@ -10,6 +12,8 @@ Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_24MS, TCS3472
 MP3 mp3(7, 8);
 uint16_t RawColor_Red, RawColor_Green, RawColor_Blue, RawColor_Clear;
 byte Color_Red, Color_Green, Color_Blue, Color_Clear;
+TM1637Display segment_display(10, 11);
+
 
 double getColor(int colorCode, bool isRaw) {
   tcs.getRawData(&RawColor_Red, &RawColor_Green, &RawColor_Blue, &RawColor_Clear);
@@ -35,6 +39,7 @@ void leaphyProgram() {
   display.display();
   delay(500);
   mp3.playWithVolume(0x01, 0x1a);
+  segment_display.showNumberDec(score);
 }
 
 void setup() {
@@ -48,7 +53,7 @@ void setup() {
   {
     Serial.println(F("Contact with the display failed: Check the connections"));
   }
-
+  segment_display.setBrightness(255);
 
   leaphyProgram();
 }
