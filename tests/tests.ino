@@ -39,7 +39,7 @@ void leaphyProgram() {
   display.display();
   delay(500);
   mp3.playWithVolume(0x01, 0x1a);
-  segment_display.showNumberDec(score);
+  segment_display.showNumberDec(8);
 }
 
 void setup() {
