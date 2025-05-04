@@ -20,6 +20,12 @@ jobs:
         with:
           library-manager: update
 
+      - name: Run formatting
+        run: |
+          sudo apt-get install -y clang-format
+          find . -name "*.cpp" -o -name "*.h" -o -name "*.hpp" | 
+          xargs clang-format --dry-run -Werror
+
       - name: Install libraries
         run:
           |
