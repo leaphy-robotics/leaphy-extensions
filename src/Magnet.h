@@ -3,15 +3,14 @@
 
 #include "Arduino.h"
 
-class Magnet
-{
-  public:
-    Magnet(int d0 = -1, int a0 = -1);
-    bool readD();
-    int readA();
-  private:
+class Magnet {
     int d0;
     int a0;
+
+   public:
+    explicit Magnet(int d0 = -1, int a0 = -1);
+    bool readD();
+    int readA();
 };
 
 #endif

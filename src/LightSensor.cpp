@@ -1,18 +1,12 @@
 #include "LightSensor.h"
+
 #include <Arduino.h>
 
-LIGHTSENSOR::LIGHTSENSOR(int pin)
-{
-    this->pin = pin;
-}
+LightSensor::LightSensor(const int pin) { this->pin = pin; }
 
-bool LIGHTSENSOR::begin()
-{
+bool LightSensor::begin() {
     pinMode(pin, INPUT);
     return true;
 }
 
-int LIGHTSENSOR::read()
-{
-    return analogRead(pin);
-}
+int LightSensor::read() { return analogRead(pin); }
