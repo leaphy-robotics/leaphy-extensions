@@ -5,14 +5,9 @@
 #ifndef LEAPHYORIGINAL1_H_
 #define LEAPHYORIGINAL1_H_
 
-#include <Arduino.h>
-
-#include "wiring_private.h"
 #ifndef F_CPU
 #define F_CPU 16000000UL
 #endif
-#include <stdint.h>
-#include <stdlib.h>
 
 #define MOTOR_LEFT (9)    // M1
 #define MOTOR_RIGHT (10)  // M2

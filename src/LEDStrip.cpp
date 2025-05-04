@@ -1,4 +1,6 @@
-#include "Ledstrip.h"
+#include "LEDStrip.h"
+
+#include <Arduino.h>
 
 LEDStrip::LEDStrip(const uint8_t p, const uint16_t tot) {
     strip.begin();

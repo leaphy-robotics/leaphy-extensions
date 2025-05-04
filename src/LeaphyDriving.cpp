@@ -2,7 +2,9 @@
 // suitable for Fundumoto Shield
 // Copyright Science4Kids& Stichting Leaphy 2018
 // version 1.0.0    25 JULI 2018
-#include "Leaphy_Driving.h"
+#include "LeaphyDriving.h"
+
+#include <Arduino.h>
 
 float getDistanceSonar(const int trigPin, const int echoPin) {
     pinMode(trigPin, OUTPUT);
