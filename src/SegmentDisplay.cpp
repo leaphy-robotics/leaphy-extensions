@@ -20,7 +20,7 @@ extern "C" {
   #include <inttypes.h>
 }
 
-#include <TM1637Display.h>
+#include <SegmentDisplay.h>
 #include <Arduino.h>
 
 #define TM1637_I2C_COMM1    0x40
