@@ -1,7 +1,7 @@
 #include "OLED_Display.h"
 #include "ledstrip.h"
 #include "RedMP3.h"
-#include <TM1637Display.h>
+#include <SegmentDisplay.h>
 
 
 LEDSTRIP ledstrip(1, 60);
