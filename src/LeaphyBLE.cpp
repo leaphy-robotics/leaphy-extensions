@@ -64,6 +64,12 @@ void LeaphyBLE::scanForLeaphyDevices()
     BLE.scanForUuid(LEAPHY_BLE_SERVICE_UUID);
 }
 
+void LeaphyBLE::scanForDeviceByName(const char *name)
+{
+    // Start filtered scan for BLE devices with specific name
+    BLE.scanForName(name);
+}
+
 void LeaphyBLE::stopScanning()
 {
     BLE.stopScan();
