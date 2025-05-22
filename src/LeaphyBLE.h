@@ -12,6 +12,7 @@ public:
   BLECharacteristic* getCharacteristicByName(const char *name);
   bool isALeaphy(BLEDevice device);
   void scanForLeaphyDevices();
+  void scanForDeviceByName(const char *name);
   void stopScanning();
 
 private:
