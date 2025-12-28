@@ -36,10 +36,6 @@ void setup() {
     Serial.println("Geen RGB-sensor gevonden... check je verbindingen...");
   }
   Serial.begin(115200);
-  if(!display.begin())
-  {
-    Serial.println(F("Contact with the display failed: Check the connections"));
-  }
   segment_display.setBrightness(255);
 
   leaphyProgram();
