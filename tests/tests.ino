@@ -1,8 +1,5 @@
-#include "OLED_Display.h"
 #include "RedMP3.h"
 #include <SegmentDisplay.h>
-
-
 #include "Adafruit_TCS34725.h"
 
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_24MS, TCS34725_GAIN_16X);
@@ -26,12 +23,7 @@ double getColor(int colorCode, bool isRaw) {
   return 0.0;
 }
 
-OLEDDISPLAY display;
 void leaphyProgram() {
-  display.clearDisplay();
-  display.setCursor(0,0);
-  display.println("Hallo");
-  display.display();
   delay(500);
   mp3.playWithVolume(0x01, 0x1a);
   segment_display.showNumberDec(8);
