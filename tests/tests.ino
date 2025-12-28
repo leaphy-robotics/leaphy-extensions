@@ -1,10 +1,7 @@
 #include "OLED_Display.h"
-#include "ledstrip.h"
 #include "RedMP3.h"
 #include <SegmentDisplay.h>
 
-
-LEDSTRIP ledstrip(1, 60);
 
 #include "Adafruit_TCS34725.h"
 
@@ -31,8 +28,6 @@ double getColor(int colorCode, bool isRaw) {
 
 OLEDDISPLAY display;
 void leaphyProgram() {
-  _snelHeid = 1;
-  ledstrip.runFunction(4, getColor(0, true), getColor(1, true), getColor(2, true));
   display.clearDisplay();
   display.setCursor(0,0);
   display.println("Hallo");
