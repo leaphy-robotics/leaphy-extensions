@@ -1,27 +1,8 @@
 #include "RedMP3.h"
 #include <SegmentDisplay.h>
-#include "Adafruit_TCS34725.h"
 
-Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_24MS, TCS34725_GAIN_16X);
 MP3 mp3(7, 8);
-uint16_t RawColor_Red, RawColor_Green, RawColor_Blue, RawColor_Clear;
-byte Color_Red, Color_Green, Color_Blue, Color_Clear;
 TM1637Display segment_display(10, 11);
-
-
-double getColor(int colorCode, bool isRaw) {
-  tcs.getRawData(&RawColor_Red, &RawColor_Green, &RawColor_Blue, &RawColor_Clear);
-  Color_Red = min(RawColor_Red/5,255); Color_Green = min(RawColor_Green/5,255); Color_Blue = min(RawColor_Blue/5,255);
-  switch(colorCode) {
-    case 0:
-      return (isRaw) ? RawColor_Red : Color_Red;
-    case 1:
-      return (isRaw) ? RawColor_Green : Color_Green;
-    case 2:
-      return (isRaw) ? RawColor_Blue : Color_Blue;
-  }
-  return 0.0;
-}
 
 void leaphyProgram() {
   delay(500);
@@ -30,11 +11,6 @@ void leaphyProgram() {
 }
 
 void setup() {
-  if (tcs.begin()) {
-    Serial.println("RGB-sensor gevonden!");
-  } else {
-    Serial.println("Geen RGB-sensor gevonden... check je verbindingen...");
-  }
   Serial.begin(115200);
   segment_display.setBrightness(255);
 
